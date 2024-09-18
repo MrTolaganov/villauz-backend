@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node dist/app.js",        
     "dev": "nodemon app.ts",
-    "build": "tsc",
+    "build": "tsc --output public",
     "start:dev": "ts-node app.ts",
     "watch": "tsc -w"
   },
