@@ -4,7 +4,7 @@ import { Client } from "pg";
 config();
 
 const client = new Client({
-  connectionString: process.env.DB_URI!,
+  connectionString: process.env.DB_URI,
 });
 
 client.connect(err => {
