@@ -105,8 +105,9 @@
     // "skipDefaultLibCheck": true,                      /* Skip type checking .d.ts files that are included with TypeScript. */
     "skipLibCheck": true /* Skip type checking all .d.ts files. */,
     "outDir": "./dist",
-    "rootDir": "./"
+    "sourceMap": true,
+    "moduleResolution": "Node"
   },
-  "include": ["**/*.ts"],
+  "include": ["app.ts"],
   "exclude": ["node_modules"]
 }
