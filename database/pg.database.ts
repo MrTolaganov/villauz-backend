@@ -1,19 +1,18 @@
 import { config } from "dotenv";
 import { Client } from "pg";
 
-config()
+config();
 
 const client = new Client({
-  user: process.env.PG_USER,
-  port: Number(process.env.PG_PORT),
-  host: process.env.PG_HOST,
-  database: process.env.PG_DB,
-  password: process.env.PG_PASS,
+  connectionString: process.env.DB_URI!,
 });
 
 client.connect(err => {
-  if (err) throw err;
-  console.log("PostgresSQL connected successfully");
+  if (err) {
+    console.log("PostgresSQL error", err.stack);
+  } else {
+    console.log("PostgresSQL connected successfully");
+  }
 });
 
 export default client;
