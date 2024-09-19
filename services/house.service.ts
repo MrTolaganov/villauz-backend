@@ -9,7 +9,6 @@ class HouseService {
   async createHouse(house: HouseType, files: UploadedFile, userId: number) {
     const { label, body, price } = house;
     const image = fileService.saveFile(files);
-    console.log(userId);
     const userData = await authService.getUser(userId);
     const data = await client.query(
       `INSERT INTO houses (label, image, body, price, owner) VALUES ($1, $2, $3, $4, $5) RETURNING *`,

@@ -13,8 +13,6 @@ class HouseController {
       );
       res.status(201).json(house);
     } catch (error) {
-      console.log(error);
-
       next(error);
     }
   }

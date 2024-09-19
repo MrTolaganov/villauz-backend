@@ -16,7 +16,7 @@ app.use(cors({ origin: process.env.CLIENT_URL, credentials: true }));
 app.use(express.json());
 app.use(cookieParser());
 app.use(fileUpload());
-app.use("/static", express.static(path.join(__dirname, "static")));
+app.use(express.static("static"));
 
 app.use("/api/auth", authRouter);
 app.use("/api/house", houseRouter);
