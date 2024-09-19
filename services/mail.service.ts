@@ -41,7 +41,7 @@ class MailService {
       await this.transporter.sendMail({
         from: process.env.SMTP_USER,
         to: email,
-        subject: `Villauz: Forgot password`,
+        subject: `Villauz: Recovery Account ${link}`,
         html: `<div>
          <h1 style="text-align: center; color: green;">Click the button bellow if you want to recover your account.</h1>
         <div style="text-align:center">
