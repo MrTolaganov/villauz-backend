@@ -6,6 +6,7 @@ import authRouter from "./routes/auth.route";
 import houseRouter from "./routes/house.route";
 import errorMiddleware from "./middlewares/error.middleware";
 import cors from "cors";
+import path from "path";
 
 const app = express();
 
@@ -15,7 +16,7 @@ app.use(cors({ origin: process.env.CLIENT_URL, credentials: true }));
 app.use(express.json());
 app.use(cookieParser());
 app.use(fileUpload());
-app.use(express.static("static"));
+app.use("/static", express.static(path.join(__dirname, "static")));
 
 app.use("/api/auth", authRouter);
 app.use("/api/house", houseRouter);
